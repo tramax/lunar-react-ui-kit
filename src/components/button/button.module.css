@@ -1,0 +1,32 @@
+@import 'styles/variables.css';
+
+:root {
+  --border-radius: 4px;
+}
+
+.button {
+  border: none;
+  position: relative;
+  display: inline-block;
+  /* width: 60vh; */
+  /* height: 100%; */
+  padding: 10px 20px;
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  border-radius: calc(var(--border-radius)*3)/calc(var(--border-radius)*2);
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
+.button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: calc(var(--border-radius)*-0.5);
+  width: calc(100% + var(--border-radius));
+  height: 90%;
+  z-index: -1;
+  background: var(--color-primary-bg);
+  border-radius: calc(var(--border-radius)*2)/calc(var(--border-radius)*3);
+}
