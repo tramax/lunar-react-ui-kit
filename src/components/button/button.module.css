@@ -1,14 +1,16 @@
 @import 'styles/variables.css';
 
 .button {
-  --border-radius: 4px;
+  --radius: 30px;
+  --radius-1: calc(var(--radius)/2);
+  --radius-2: calc(var(--radius)/5);
+  border-radius: var(--radius-1)/var(--radius-2);
   border: none;
   position: relative;
   display: inline-block;
   padding: 10px 20px;
   background: var(--color-primary-bg);
   color: var(--color-primary);
-  border-radius: calc(var(--border-radius)*3)/calc(var(--border-radius)*2);
   font-size: var(--font-size);
   font-weight: bold;
   cursor: pointer;
@@ -17,16 +19,16 @@
 }
 
 .button:after {
+  top: calc(var(--radius-2)/2);
+  left: calc(var(--radius-2)/-2);
+  width: calc(100% + var(--radius-2));
+  height: calc(100% - var(--radius-2));
+  border-radius: var(--radius-2)/var(--radius-1);
   content: '';
   display: block;
   position: absolute;
-  top: 5%;
-  left: calc(var(--border-radius)*-0.5);
-  width: calc(100% + var(--border-radius));
-  height: 90%;
   z-index: -1;
   background: var(--color-primary-bg);
-  border-radius: calc(var(--border-radius)*2)/calc(var(--border-radius)*3);
 }
 
 .button:hover {
