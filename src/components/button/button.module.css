@@ -16,6 +16,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: var(--transition-ease);
+  transform: translate3d(0, 0, 0);
 }
 
 .button:after {
