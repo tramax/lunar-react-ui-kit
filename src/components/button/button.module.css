@@ -16,6 +16,8 @@
   border-radius: calc(var(--border-radius)*3)/calc(var(--border-radius)*2);
   font-size: var(--font-size);
   font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-ease);
 }
 
 .button:after {
@@ -29,4 +31,9 @@
   z-index: -1;
   background: var(--color-primary-bg);
   border-radius: calc(var(--border-radius)*2)/calc(var(--border-radius)*3);
+}
+
+.button:hover {
+  transform: translate3d(0, -4px, 0);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 8px 25px -10px;
 }
