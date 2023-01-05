@@ -3,30 +3,26 @@ import classnames from 'classnames';
 
 interface ButtonProps {
   /**
-   * Is this the principal call to action on the page?
+   * The main action in a page
    */
   primary?: boolean;
   /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
+   * Button content
    */
   label: string;
   /**
-   * Optional click handler
+   * Click handler function
    */
   onClick?: () => void;
 }
 
 /**
- * Primary UI component for user interaction
+ * Allows users to perform some action
  */
 export const Button = ({
   primary = false,
-  size = 'medium',
-  label
+  label,
+  ...props
 }: ButtonProps) => {
   const classes = classnames({
     [styles.button]: true,
@@ -37,6 +33,7 @@ export const Button = ({
     <button
       type="button"
       className={classes}
+      {...props}
     >
       {label}
     </button>

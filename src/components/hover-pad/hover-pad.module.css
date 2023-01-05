@@ -1,0 +1,33 @@
+@import 'styles/variables.css';
+
+.pad {
+  --radius: 20px;
+  --radius-1: calc(var(--radius)/2);
+  --radius-2: calc(var(--radius)/5);
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  background: var(--color-primary-bg-light);
+  border-radius: var(--radius-1)/var(--radius-2);
+  cursor: pointer;
+  transition: var(--transition-ease);
+}
+
+.pad:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(var(--radius-2)/2);
+  left: calc(var(--radius-2)/-2);
+  width: calc(100% + var(--radius-2));
+  height: calc(100% - var(--radius-2));
+  z-index: -1;
+  background: var(--color-primary-bg-light);
+  border-radius: var(--radius-2)/var(--radius-1);
+  transition: var(--transition-ease);
+}
+
+.pad:hover, .pad:hover:after {
+  background: var(--color-primary-bg);
+}
+
