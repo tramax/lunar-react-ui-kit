@@ -1,4 +1,5 @@
 import styles from './button.module.css';
+import classnames from 'classnames';
 
 interface ButtonProps {
   /**
@@ -32,11 +33,15 @@ export const Button = ({
   backgroundColor,
   label
 }: ButtonProps) => {
-  console.log(styles)
+  const classes = classnames({
+    [styles.button]: true,
+    [styles.primary]: primary
+  });
+
   return (
     <button
       type="button"
-      className={styles.button}
+      className={classes}
     >
       {label}
     </button>
