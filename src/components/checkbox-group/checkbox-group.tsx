@@ -10,7 +10,7 @@ interface CheckboxGroupProps {
   /**
    * Checkbox Group label
    */
-  label: string;
+  label?: string;
   /**
    * Array of options
    */
@@ -18,7 +18,7 @@ interface CheckboxGroupProps {
   /**
    * Array containing checked values
    */
-  value: string[];
+  values: string[];
   /**
    * CheckboxGroup change handler function
    */
@@ -27,12 +27,12 @@ interface CheckboxGroupProps {
 
 export const CheckboxGroup = ({
   label,
-  value = [],
+  values = [],
   options,
   onChange
 }: CheckboxGroupProps) => {
   function handleInputChange(selectedValue: string): void {
-    let result = [...value];
+    let result = [...values];
     const index = result.indexOf(selectedValue);
 
     if (index === -1) {
@@ -50,7 +50,7 @@ export const CheckboxGroup = ({
     >
       {options.map(option => (
         <Checkbox
-          checked={value.indexOf(option.value) > -1 ? true : false}
+          checked={values.indexOf(option.value) > -1 ? true : false}
           onChange={() => handleInputChange(option.value)}
         >
           {option.label}

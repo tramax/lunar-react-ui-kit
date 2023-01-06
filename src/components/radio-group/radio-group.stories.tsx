@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { CheckboxGroup } from './checkbox-group';
+import { RadioGroup } from './radio-group';
 
 const OPTIONS = [
   { label: 'Jupiter planet', value: 'jupiter' },
@@ -7,16 +7,16 @@ const OPTIONS = [
   { label: 'Black hole', value: 'black_hole' },
 ];
 
-const LABEL = 'Checkbox Group (multiple choice)';
+const LABEL = 'Radio Group (single choice)';
 
-const VALUES = ['mars'];
+const VALUE = 'mars';
 
 export default {
-  title: 'Data Entry/Checkbox Group',
-  component: CheckboxGroup
-} as ComponentMeta<typeof CheckboxGroup>;
+  title: 'Data Entry/Radio Group',
+  component: RadioGroup
+} as ComponentMeta<typeof RadioGroup>;
 
-const Template: ComponentStory<typeof CheckboxGroup> = (args) => <CheckboxGroup {...args}/>;
+const Template: ComponentStory<typeof RadioGroup> = (args) => <RadioGroup {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -28,5 +28,5 @@ export const Checked = Template.bind({});
 Checked.args = {
   label: LABEL,
   options: OPTIONS,
-  values: VALUES
+  value: VALUE
 };
