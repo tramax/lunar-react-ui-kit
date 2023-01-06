@@ -1,4 +1,5 @@
 import React from 'react';
+import commonStyles from 'styles/common.module.css';
 import styles from './hover-pad.module.css';
 import classnames from 'classnames';
 import { Div, Label } from 'components/element/element';
@@ -38,7 +39,9 @@ export const HoverPad = ({
 }: HoverPadProps) => {
   const classes = classnames({
     [styles.pad]: true,
+    [commonStyles.squircle]: true
   }, className);
+  
   const Wrapper = componentMap[elementType];
 
   return (

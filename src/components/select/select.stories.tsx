@@ -7,6 +7,11 @@ const OPTIONS = [
   { label: 'Venus planet', value: 'venus' },
   { label: 'Earth planet', value: 'earth' },
   { label: 'Black hole', value: 'black_hole' },
+  { label: 'Planet A1', value: 'a1' },
+  { label: 'Planet NST', value: 'nst' },
+  { label: 'Planet Gemini 2', value: 'ge2' },
+  { label: 'Planet Leo SK', value: 'leo' },
+  { label: 'Planet Automata-III', value: 'aut3' }
 ];
 
 const LABEL = 'Select Dropdown';

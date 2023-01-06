@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import styles from './select.module.css';
+import commonStyles from 'styles/common.module.css';
 import { Section } from 'components/section/section';
 import { HoverPad } from 'components/hover-pad/hover-pad';
 import { Tag } from 'components/tag/tag';
+import classnames from 'classnames';
 
 interface Option {
   label: string;
@@ -85,6 +87,21 @@ export const Select = ({
           }
         </div>
       </HoverPad> 
+      <div
+        className={styles.dropdownWrapper}
+      >
+        <div
+          className={classnames(commonStyles.squircle, styles.dropdown)}
+        >
+          {options.map((option) => (
+            <HoverPad
+              key={option.value}
+            >
+              {option.label}
+            </HoverPad>
+          ))}
+        </div>
+      </div>
     </Section>
   );
 };

@@ -1,0 +1,21 @@
+.squircle {
+  --radius: 20px;
+  --radius-1: calc(var(--radius)/2);
+  --radius-2: calc(var(--radius)/5);
+  border-radius: var(--radius-1)/var(--radius-2);
+  position: relative;
+  display: block;
+  transform: translate3d(0, 0, 0);
+}
+
+.squircle:after {
+  top: calc(var(--radius-2)/2);
+  left: calc(var(--radius-2)/-2);
+  width: calc(100% + var(--radius-2));
+  height: calc(100% - var(--radius-2));
+  border-radius: var(--radius-2)/var(--radius-1);
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
