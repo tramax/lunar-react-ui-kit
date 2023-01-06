@@ -8,11 +8,7 @@ import { CheckboxGroup } from 'components/checkbox-group/checkbox-group';
 import { RadioGroup } from 'components/radio-group/radio-group';
 import classnames from 'classnames';
 import { RiCloseCircleFill } from 'react-icons/ri';
-
-interface Option {
-  label: string;
-  value: string;
-}
+import { Option, filterOption, readOption } from 'helpers/option';
 
 interface SelectProps {
   /**
@@ -153,31 +149,3 @@ export const Select = ({
     </Section>
   );
 };
-
-/**
- * Return the label of a value in an option array
- * @param value Option array and value to read
- * @param options Array of { label, value }
- * @return The matched label
- */
-function readOption(
-  value: string,
-  options: Option[]
-): string {
-  const matchedOption = options.find(option => option.value === value);
-
-  return matchedOption?.label || '';
-}
-
-/**
- * Check if an option contains a string
- * @param option The option to check
- * @param filterString The filter string, often user input
- * @returns Whether the option contains the filter string
- */
-function filterOption(
-  option: { label: string }, 
-  filterString: string
-): boolean {
-  return option.label.toLowerCase().indexOf(filterString) > -1;
-}
