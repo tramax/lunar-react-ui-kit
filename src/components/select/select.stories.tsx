@@ -18,6 +18,8 @@ const LABEL = 'Select Dropdown';
 
 const VALUES = ['mars', 'earth'];
 
+const VALUE = 'mars';
+
 export default {
   title: 'Data Entry/Select',
   component: Select
@@ -37,5 +39,5 @@ export const Single = Template.bind({});
 Single.args = {
   label: LABEL,
   options: OPTIONS,
-  values: VALUES
+  value: VALUE
 };

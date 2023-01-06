@@ -5,6 +5,7 @@ import { Section } from 'components/section/section';
 import { HoverPad } from 'components/hover-pad/hover-pad';
 import { Tag } from 'components/tag/tag';
 import { CheckboxGroup } from 'components/checkbox-group/checkbox-group';
+import { RadioGroup } from 'components/radio-group/radio-group';
 import classnames from 'classnames';
 
 interface Option {
@@ -22,9 +23,13 @@ interface SelectProps {
    */
   options: Option[];
   /**
-   * Array containing selected values
+   * Array containing multiple selected values
    */
   values: string[];
+  /**
+   * Single selected value
+   */
+  value: string;
   /**
    * Multi or single select
    */
@@ -32,12 +37,13 @@ interface SelectProps {
   /**
    * Select change handler function
    */
-  onChange: (value: string[]) => void;
+  onChange: (value: string[] | string) => void;
 }
 
 export const Select = ({
   label,
   values = [],
+  value,
   options,
   multi,
   onChange
@@ -86,6 +92,13 @@ export const Select = ({
               />
             </>
           }
+          {!multi &&
+            <div
+              className={styles.singleValue}
+            >
+              {readOption(value, options)}
+            </div>
+          }
         </div>
       </HoverPad> 
       <div
@@ -94,11 +107,20 @@ export const Select = ({
         <div
           className={classnames(commonStyles.squircle, styles.dropdown)}
         >
-          <CheckboxGroup
-            options={options}
-            values={values}
-            onChange={onChange}
-          />
+          {multi &&
+            <CheckboxGroup
+              options={options}
+              values={values}
+              onChange={onChange}
+            />
+          }
+          {!multi &&
+            <RadioGroup
+              options={options}
+              value={value}
+              onChange={onChange}
+            />
+          }
         </div>
       </div>
     </Section>
