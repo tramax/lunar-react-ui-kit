@@ -1,5 +1,11 @@
 .wrapper {
   display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: calc(-1*var(--spacing-small));
@@ -41,4 +47,19 @@
 
 .singleValue {
   margin-bottom: var(--spacing-small);
+}
+
+.removeIcon {
+  margin-left: var(--spacing-small);
+  cursor: pointer;
+  transition: var(--transition-ease);
+}
+
+.removeIcon:hover {
+  transform: scale3d(1.5, 1.5, 1);
+}
+
+.removeIcon svg {
+  fill: var(--color-secondary);
+  vertical-align: middle;
 }

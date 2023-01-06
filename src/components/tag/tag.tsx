@@ -37,7 +37,7 @@ export const Tag = ({
         >
           <RiCloseCircleFill
             size={16}
-            className={styles.icon}
+            className={styles.removeIcon}
           />
         </span>
       }

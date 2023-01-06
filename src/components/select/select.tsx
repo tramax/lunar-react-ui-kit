@@ -7,6 +7,7 @@ import { Tag } from 'components/tag/tag';
 import { CheckboxGroup } from 'components/checkbox-group/checkbox-group';
 import { RadioGroup } from 'components/radio-group/radio-group';
 import classnames from 'classnames';
+import { RiCloseCircleFill } from 'react-icons/ri';
 
 interface Option {
   label: string;
@@ -25,15 +26,19 @@ interface SelectProps {
   /**
    * Array containing multiple selected values
    */
-  values: string[];
+  values?: string[];
   /**
    * Single selected value
    */
-  value: string;
+  value?: string;
   /**
    * Multi or single select
    */
-  multi: boolean;
+  multi?: boolean;
+  /**
+   * Show a remove icon to clear the input
+   */
+  clearable?: boolean;
   /**
    * Select change handler function
    */
@@ -43,14 +48,15 @@ interface SelectProps {
 export const Select = ({
   label,
   values = [],
-  value,
+  value = '',
   options,
   multi,
+  clearable,
   onChange
 }: SelectProps) => {
   const [input, setInput] = useState<string>('');
 
-  function handleInputChange(selectedValue: string): void {
+  function handleInputChange(selectedValue: string) {
     let result = [...values];
     const index = result.indexOf(selectedValue);
 
@@ -63,15 +69,24 @@ export const Select = ({
     onChange(result);
   }
 
+  function handleClear() {
+    if (multi) {
+      onChange([]);
+    } else {
+      onChange('');
+    }
+  }
+
   return (
     <Section
       label={label}
     >
       <HoverPad
         elementType='label'
+        className={styles.wrapper}
       >
         <div
-          className={styles.wrapper}
+          className={styles.content}
         >
           {multi &&
             <>
@@ -100,6 +115,16 @@ export const Select = ({
             </div>
           }
         </div>
+        {clearable &&
+          <span
+            className={styles.removeIcon}
+            onClick={handleClear}
+          >
+            <RiCloseCircleFill
+              size={16}
+            />
+          </span>
+        }
       </HoverPad> 
       <div
         className={styles.dropdownWrapper}

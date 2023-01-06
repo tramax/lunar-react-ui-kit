@@ -13,12 +13,12 @@
   cursor: default;
 }
 
-.icon {
+.removeIcon {
   margin-left: var(--spacing-small);
   cursor: pointer;
   transition: var(--transition-ease);
 }
 
-.icon:hover {
+.removeIcon:hover {
   transform: scale3d(1.5, 1.5, 1);
 }

@@ -41,3 +41,11 @@ Single.args = {
   options: OPTIONS,
   value: VALUE
 };
+
+export const Clearable = Template.bind({});
+Clearable.args = {
+  label: LABEL,
+  options: OPTIONS,
+  value: VALUE,
+  clearable: true
+};
