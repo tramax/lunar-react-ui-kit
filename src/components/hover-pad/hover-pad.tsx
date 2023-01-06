@@ -3,27 +3,66 @@ import styles from './hover-pad.module.css';
 import classnames from 'classnames';
 
 interface HoverPadProps {
+  children?: React.ReactNode;
   /**
-   * The main action in a page
+   * The wrapper type
    */
-  children?: React.ReactNode
+  elementType?: 'div' | 'label';
 }
+
+interface WrapperProps {
+  children?: React.ReactNode;
+  className?: string;
+}
+
+const Div = ({
+  children,
+  ...props
+}: WrapperProps) => {
+  return (
+    <div
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
+const Label = ({
+  children,
+  ...props
+}: WrapperProps) => {
+  return (
+    <label
+      {...props}
+    >
+      {children}
+    </label>
+  );
+};
+
+const componentMap = {
+  div: Div,
+  label: Label
+};
 
 /**
  * Allows users to perform some action
  */
 export const HoverPad = ({
-  children
+  children,
+  elementType = 'div'
 }: HoverPadProps) => {
   const classes = classnames({
     [styles.pad]: true,
   });
+  const Wrapper = componentMap[elementType];
 
   return (
-    <div
+    <Wrapper
       className={classes}
     >
       {children}
-    </div>
+    </Wrapper>
   );
 };

@@ -1,0 +1,11 @@
+.input {
+  border: none;
+  background: none;
+  font-size: var(--font-size);
+  cursor: pointer;
+  width: 100%;
+}
+
+.input:focus-visible {
+  outline: none;
+}

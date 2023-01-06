@@ -1,5 +1,6 @@
 import styles from './input.module.css';
 import classnames from 'classnames';
+import { HoverPad } from 'components/hover-pad/hover-pad';
 
 interface InputProps {
   /**
@@ -22,14 +23,19 @@ export const Input = ({
   onChange
 }: InputProps) => {
   const classes = classnames({
-    [styles.button]: true
+    [styles.input]: true
   });
 
   return (
-    <input
-      type={type}
-      value={value}
-      onChange={onChange}
-    />
+    <HoverPad
+      elementType='label'
+    >
+      <input
+        className={classes}
+        type={type}
+        value={value}
+        onChange={onChange}
+      />
+    </HoverPad> 
   );
-}
+};
