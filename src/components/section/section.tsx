@@ -1,5 +1,4 @@
 import styles from './section.module.css';
-import classnames from 'classnames';
 
 interface SectionProps {
   /**
@@ -16,13 +15,9 @@ export const Section = ({
   label,
   children
 }: SectionProps) => {
-  const classes = classnames({
-    [styles.section]: true
-  });
-
   return (
     <div
-      className={classes}
+      className={styles.section}
     >
       {label &&
         <div
