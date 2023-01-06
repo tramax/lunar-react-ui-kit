@@ -1,4 +1,4 @@
-.wrapper {
+.content {
   font-size: var(--font-size);
   cursor: pointer;
   display: flex;
@@ -15,6 +15,10 @@
   border-radius: 5.5px;
   position: relative;
   transition: var(--transition-ease);
+}
+
+.wrapper:hover .box {
+  transform: scale3d(1.2, 1.2, 1);
 }
 
 .checked {

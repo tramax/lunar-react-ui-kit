@@ -31,9 +31,10 @@ export const Radio = ({
   return (
     <HoverPad
       onClick={onChange}
+      className={styles.wrapper}
     >
       <div
-        className={styles.wrapper}
+        className={styles.content}
       >
         <div
           className={boxClasses}
