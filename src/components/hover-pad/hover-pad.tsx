@@ -9,9 +9,17 @@ interface HoverPadProps {
    */
   children?: React.ReactNode;
   /**
+   * Optional class name
+   */
+  className?: string;
+  /**
    * The wrapper type
    */
   elementType?: 'div' | 'label';
+  /**
+   * Optional click handler function
+   */
+  onClick?: () => void;
 }
 
 const componentMap = {
@@ -23,17 +31,20 @@ const componentMap = {
  * Allows users to perform some action
  */
 export const HoverPad = ({
+  className,
   children,
+  onClick,
   elementType = 'div'
 }: HoverPadProps) => {
   const classes = classnames({
     [styles.pad]: true,
-  });
+  }, className);
   const Wrapper = componentMap[elementType];
 
   return (
     <Wrapper
       className={classes}
+      onClick={onClick}
     >
       {children}
     </Wrapper>

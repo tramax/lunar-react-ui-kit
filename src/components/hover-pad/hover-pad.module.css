@@ -6,12 +6,13 @@
   --radius-2: calc(var(--radius)/5);
   border-radius: var(--radius-1)/var(--radius-2);
   position: relative;
-  display: inline-block;
-  padding: 6px 10px;
+  display: block;
+  padding: 10px;
   background: var(--color-primary-bg-light);
   cursor: pointer;
   transition: var(--transition-ease);
   width: 100%;
+  transform: translate3d(0, 0, 0);
 }
 
 .pad:after {
