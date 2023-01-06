@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './select.module.css';
 import commonStyles from 'styles/common.module.css';
 import { Section } from 'components/section/section';
@@ -67,7 +67,9 @@ export const Select = ({
     onChange(result);
   }
 
-  function handleClear() {
+  function handleClear(event: React.SyntheticEvent) {
+    event.stopPropagation();
+
     if (multi) {
       onChange([]);
     } else {
