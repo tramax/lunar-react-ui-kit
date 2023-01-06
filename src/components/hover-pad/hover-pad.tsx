@@ -4,6 +4,9 @@ import classnames from 'classnames';
 import { Div, Label } from 'components/element/element';
 
 interface HoverPadProps {
+  /**
+   * Content
+   */
   children?: React.ReactNode;
   /**
    * The wrapper type

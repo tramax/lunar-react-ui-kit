@@ -1,8 +1,13 @@
 import styles from './input.module.css';
 import classnames from 'classnames';
 import { HoverPad } from 'components/hover-pad/hover-pad';
+import { Section } from 'components/section/section';
 
 interface InputProps {
+  /**
+   * Input label
+   */
+  label?: string;
   /**
    * Input value
    */
@@ -18,6 +23,7 @@ interface InputProps {
 }
 
 export const Input = ({
+  label,
   value,
   type='text',
   onChange
@@ -27,15 +33,19 @@ export const Input = ({
   });
 
   return (
-    <HoverPad
-      elementType='label'
+    <Section
+      label={label}
     >
-      <input
-        className={classes}
-        type={type}
-        value={value}
-        onChange={onChange}
-      />
-    </HoverPad> 
+      <HoverPad
+        elementType='label'
+      >
+        <input
+          className={classes}
+          type={type}
+          value={value}
+          onChange={onChange}
+        />
+      </HoverPad> 
+    </Section>
   );
 };

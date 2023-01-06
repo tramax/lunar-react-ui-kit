@@ -1,15 +1,14 @@
+@import 'styles/reset.css';
+@import 'styles/font.css';
+
 :root {
   --color-primary: #713dd7;
   --color-primary-bg: #f0e9ff;
   --color-primary-bg-light: #f3f1f7;
-  --font-size: 14px;
+  --color-secondary: #a093bb;
+  --font-size: 16px;
+  --font-size-small: 14px;
   --transition-ease: all 0.2s cubic-bezier(0.19, 0.85, 0.73, 0.99);
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-:focus {
-  outline: none;
+  --spacing: 10px;
+  --spacing-small: 5px;
 }
