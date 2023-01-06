@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './checkbox.module.css';
 import classnames from 'classnames';
 import { HoverPad } from 'components/hover-pad/hover-pad';

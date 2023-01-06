@@ -1,0 +1,38 @@
+.wrapper {
+  font-size: var(--font-size);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  background-color: white;
+  margin-right: var(--spacing-small);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+  border-radius: 5.5px;
+  position: relative;
+  transition: var(--transition-ease);
+}
+
+.checked {
+  box-shadow: inset 0 0 0 10px var(--color-primary);
+}
+
+.checkedIcon {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  transform: rotate(-45deg);
+  display: block;
+  border: 0 solid white;
+  border-top: none;
+  border-right: none;
+  width: 10px;
+  height: 6px;
+  border-width: 3px;
+}
