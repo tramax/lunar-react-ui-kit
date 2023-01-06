@@ -13,5 +13,5 @@
 }
 
 body {
-  font-family: 'Figtree', sans-serif;
+  font-family: var(--font-family);
 }
