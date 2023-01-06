@@ -30,6 +30,20 @@
       "react-app",
       "react-app/jest"
     ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
     "overrides": [
       {
         "files": [
