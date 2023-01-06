@@ -4,6 +4,7 @@ import commonStyles from 'styles/common.module.css';
 import { Section } from 'components/section/section';
 import { HoverPad } from 'components/hover-pad/hover-pad';
 import { Tag } from 'components/tag/tag';
+import { CheckboxGroup } from 'components/checkbox-group/checkbox-group';
 import classnames from 'classnames';
 
 interface Option {
@@ -93,13 +94,11 @@ export const Select = ({
         <div
           className={classnames(commonStyles.squircle, styles.dropdown)}
         >
-          {options.map((option) => (
-            <HoverPad
-              key={option.value}
-            >
-              {option.label}
-            </HoverPad>
-          ))}
+          <CheckboxGroup
+            options={options}
+            values={values}
+            onChange={onChange}
+          />
         </div>
       </div>
     </Section>
