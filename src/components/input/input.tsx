@@ -10,7 +10,7 @@ interface InputProps {
   /**
    * HTML input type
    */
-  type?: string;
+  type?: 'text' | 'number' | 'email' | 'password';
   /**
    * Input change handler function
    */
