@@ -8,7 +8,7 @@ import { CheckboxGroup } from 'components/checkbox-group/checkbox-group';
 import { RadioGroup } from 'components/radio-group/radio-group';
 import classnames from 'classnames';
 import { RiCloseCircleFill } from 'react-icons/ri';
-import { Option, filterOption, readOption } from 'helpers/option';
+import { Option, filterOption, readOption } from 'components/select/option';
 
 interface SelectProps {
   /**
@@ -52,6 +52,8 @@ export const Select = ({
 }: SelectProps) => {
   const [input, setInput] = useState<string>('');
 
+  const [open, setOpen] = useState<boolean>(false);
+
   function handleInputChange(selectedValue: string) {
     let result = [...values];
     const index = result.indexOf(selectedValue);
@@ -82,6 +84,7 @@ export const Select = ({
       <HoverPad
         elementType='label'
         className={styles.wrapper}
+        onClick={() => setOpen(!open)}
       >
         <div
           className={styles.content}
@@ -123,29 +126,31 @@ export const Select = ({
             />
           </span>
         }
-      </HoverPad> 
-      <div
-        className={styles.dropdownWrapper}
-      >
+      </HoverPad>
+      {open &&
         <div
-          className={classnames(commonStyles.squircle, styles.dropdown)}
+          className={styles.dropdownWrapper}
         >
-          {multi &&
-            <CheckboxGroup
-              options={filteredOptions}
-              values={values}
-              onChange={onChange}
-            />
-          }
-          {!multi &&
-            <RadioGroup
-              options={filteredOptions}
-              value={value}
-              onChange={onChange}
-            />
-          }
+          <div
+            className={classnames(commonStyles.squircle, styles.dropdown)}
+          >
+            {multi &&
+              <CheckboxGroup
+                options={filteredOptions}
+                values={values}
+                onChange={onChange}
+              />
+            }
+            {!multi &&
+              <RadioGroup
+                options={filteredOptions}
+                value={value}
+                onChange={onChange}
+              />
+            }
+          </div>
         </div>
-      </div>
+      }
     </Section>
   );
 };
