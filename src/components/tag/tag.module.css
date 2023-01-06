@@ -1,0 +1,13 @@
+@import 'styles/global.css';
+
+.tag {
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  padding: 5px 8px;
+  background: var(--color-primary);
+  margin-bottom: var(--spacing-small);
+  margin-right: var(--spacing-small);
+  font-size: var(--font-size-small);
+  color: white;
+}
