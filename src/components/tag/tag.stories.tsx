@@ -11,3 +11,8 @@ const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args}>An item</T
 export const Default = Template.bind({});
 Default.args = {
 };
+
+export const showRemove = Template.bind({});
+showRemove.args = {
+  showRemove: true
+};

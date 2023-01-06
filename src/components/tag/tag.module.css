@@ -10,4 +10,15 @@
   margin-right: var(--spacing-small);
   font-size: var(--font-size-small);
   color: white;
+  cursor: default;
+}
+
+.icon {
+  margin-left: var(--spacing-small);
+  cursor: pointer;
+  transition: var(--transition-ease);
+}
+
+.icon:hover {
+  transform: scale3d(1.5, 1.5, 1);
 }
