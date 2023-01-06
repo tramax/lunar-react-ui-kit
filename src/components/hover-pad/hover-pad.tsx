@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './hover-pad.module.css';
 import classnames from 'classnames';
+import { Div, Label } from 'components/element/element';
 
 interface HoverPadProps {
   children?: React.ReactNode;
@@ -9,37 +10,6 @@ interface HoverPadProps {
    */
   elementType?: 'div' | 'label';
 }
-
-interface WrapperProps {
-  children?: React.ReactNode;
-  className?: string;
-}
-
-const Div = ({
-  children,
-  ...props
-}: WrapperProps) => {
-  return (
-    <div
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Label = ({
-  children,
-  ...props
-}: WrapperProps) => {
-  return (
-    <label
-      {...props}
-    >
-      {children}
-    </label>
-  );
-};
 
 const componentMap = {
   div: Div,
