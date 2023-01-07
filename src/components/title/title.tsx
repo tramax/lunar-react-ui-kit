@@ -1,5 +1,7 @@
+import React from 'react';
 import styles from './title.module.css';
 import classnames from 'classnames';
+import { Heading } from './heading';
 
 interface TitleProps {
   /**
@@ -16,10 +18,15 @@ interface TitleProps {
   transformation?: 'none' | 'capitalize' | 'uppercase';
 }
 
+const LEVEL_MAP = {
+  small: 'h3',
+  medium: 'h2',
+  large: 'h1'
+} as const;
 
 export const Title = ({
   children,
-  size,
+  size = 'medium',
   transformation
 }: TitleProps) => {
   const classes = classnames({
@@ -30,9 +37,14 @@ export const Title = ({
     [styles.uppercase]: transformation === 'uppercase'
   });
 
+  const level = LEVEL_MAP[size];
+
   return (
-    <p className={classes}>
+    <Heading
+      headingLevel={level}
+      className={classes}
+    >
       {children}
-    </p>
+    </Heading>
   );
 };
