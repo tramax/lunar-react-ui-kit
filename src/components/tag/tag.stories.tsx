@@ -12,7 +12,7 @@ export const Default = Template.bind({});
 Default.args = {
 };
 
-export const showRemove = Template.bind({});
-showRemove.args = {
+export const ShowRemove = Template.bind({});
+ShowRemove.args = {
   showRemove: true
 };
