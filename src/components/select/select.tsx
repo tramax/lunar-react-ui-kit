@@ -96,7 +96,7 @@ export const Select = ({
               {values.map((value) => (
                 <Tag
                   key={value}
-                  showRemove
+                  removable
                   onRemove={() => handleInputChange(value)}
                 >
                   {readOption(value, options)}

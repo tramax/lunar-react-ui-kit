@@ -10,7 +10,7 @@ interface TagProps {
   /**
    * Show or hide the remove icon
    */
-  showRemove?: boolean;
+  removable?: boolean;
   /**
    * Handler function when user click the remove icon
    */
@@ -22,7 +22,7 @@ interface TagProps {
  */
 export const Tag = ({
   children,
-  showRemove,
+  removable,
   onRemove
 }: TagProps) => {
 
@@ -31,7 +31,7 @@ export const Tag = ({
       className={styles.tag}
     >
       {children}
-      {showRemove &&
+      {removable &&
         <span
           onClick={onRemove}
         >
