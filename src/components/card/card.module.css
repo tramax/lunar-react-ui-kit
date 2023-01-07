@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0 -1px,
+    rgba(0, 0, 0, 0.05) 0 1px,
+    rgba(0, 0, 0, 0.05) 0 8px 6px -5px;
+}
+
+.card:after {
+  background-color: white;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) -1px 0,
+    rgba(0, 0, 0, 0.05) 1px 0;
+}
+
+.label {
+  font-weight: bold;
+  font-size: var(--font-size-small);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-large);
+  position: relative;
+  display: inline-block;
+}
+
+.label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  height: 2px;
+  width: 75%;
+  background-color: var(--color-primary-bg);
+}

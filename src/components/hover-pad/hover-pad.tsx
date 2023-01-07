@@ -38,8 +38,8 @@ export const HoverPad = ({
   elementType = 'div'
 }: HoverPadProps) => {
   const classes = classnames({
-    [styles.pad]: true,
-    [commonStyles.squircle]: true
+    [commonStyles.squircle]: true,
+    [styles.pad]: true
   }, className);
   
   const Wrapper = componentMap[elementType];
