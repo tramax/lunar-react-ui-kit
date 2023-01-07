@@ -1,0 +1,40 @@
+.link {
+  margin: 0;
+  margin-block-end: var(--spacing);
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  cursor: pointer;
+  position: relative;
+}
+
+.link:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: var(--color-primary);
+  transition: var(--transition-ease);
+  transform: scale3d(0, 1, 1);
+}
+
+.link:hover::after {
+  transform: scale3d(1, 1, 1);
+}
+
+.small {
+  font-size: var(--font-size-small);
+}
+
+.large {
+  font-size: var(--font-size-large);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.tabIcon {
+  margin-left: 2px;
+  vertical-align: middle;
+}

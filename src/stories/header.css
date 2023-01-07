@@ -9,7 +9,6 @@
 
 svg {
   display: inline-block;
-  vertical-align: top;
 }
 
 h1 {
@@ -21,7 +20,7 @@ h1 {
   vertical-align: top;
 }
 
-button + button {
+button+button {
   margin-left: 10px;
 }
 
