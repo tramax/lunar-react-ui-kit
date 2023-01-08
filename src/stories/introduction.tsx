@@ -7,7 +7,6 @@ import { CheckboxGroup } from 'components/checkbox-group/checkbox-group';
 import { RadioGroup } from 'components/radio-group/radio-group';
 import { Card } from 'components/card/card';
 import { Button } from 'components/button/button';
-import { Section } from 'components/section/section';
 import { Link } from 'components/link/link';
 import { Row, Col } from 'react-flexbox-grid';
 
