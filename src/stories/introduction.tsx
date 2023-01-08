@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Title } from 'components/title/title';
 import { Text } from 'components/text/text';
 import { Input } from 'components/input/input';
@@ -8,7 +9,7 @@ import { Card } from 'components/card/card';
 import { Button } from 'components/button/button';
 import { Section } from 'components/section/section';
 import { Link } from 'components/link/link';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 
 export const OPTIONS = [
   { label: 'Jupiter planet', value: 'jupiter' },
@@ -36,8 +37,35 @@ const PERFERENCE = [
   { label: 'Newspapers', value: 'news' }
 ];
 
+const FORM = {
+  name: '',
+  gender: '',
+  content: [],
+  home: '',
+  destination: []
+};
 
 export  const Introduction = () => {
+  const [inputs, setInputs] = useState(FORM);
+
+  function handleChange (
+    name: string, 
+    value: string | string[]
+  ) {
+    setInputs(prevState => ({ 
+      ...prevState, 
+      [name]: value 
+    }));
+  }
+
+  function clearForm() {
+    setInputs(prevState => ({ 
+      ...FORM,
+      home: prevState.home,
+      destination: prevState.destination
+    }));
+  }
+
   return (
     <>
       <Title
@@ -76,14 +104,20 @@ export  const Introduction = () => {
             </Text>
             <Input
               label='Full Name'
+              value={inputs.name}
+              onChange={value => handleChange('name', value)}
             />
             <RadioGroup
               label='Gender'
               options={GENDER}
+              value={inputs.gender}
+              onChange={value => handleChange('gender', value)}
             />
             <CheckboxGroup
               label='Favorite Content'
               options={PERFERENCE}
+              values={inputs.content}
+              onChange={values => handleChange('content', values)}
             />
             <Row>
               <Col 
@@ -91,6 +125,7 @@ export  const Introduction = () => {
               >
                 <Button
                   label='Reset'
+                  onClick={clearForm}
                 />
               </Col>
               <Col 
@@ -128,12 +163,17 @@ export  const Introduction = () => {
             <Select
               label='Home Location'
               options={OPTIONS}
+              value={inputs.home}
+              onChange={value => handleChange('home', value)}
+              clearable
             />
             <Select
               label='Visitted Location'
               options={OPTIONS}
               multi
               clearable
+              values={inputs.destination}
+              onChange={values => handleChange('destination', values)}
             />
           </Card>
         </Col>

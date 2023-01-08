@@ -19,7 +19,7 @@ interface InputProps {
   /**
    * Input change handler function
    */
-  onChange?: () => void;
+  onChange?: (value: string) => void;
 }
 
 /**
@@ -46,7 +46,7 @@ export const Input = ({
           className={classes}
           type={type}
           value={value}
-          onChange={onChange}
+          onChange={event => onChange && onChange(event.target.value)}
         />
       </HoverPad> 
     </Section>
