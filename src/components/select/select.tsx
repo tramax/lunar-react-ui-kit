@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './select.module.css';
 import commonStyles from 'styles/common.module.css';
 import { Section } from 'components/section/section';
@@ -9,6 +9,7 @@ import { RadioGroup } from 'components/radio-group/radio-group';
 import classnames from 'classnames';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { Option, filterOption, readOption } from 'components/select/option';
+import listenForOutsideClicks from './outside-click';
 
 interface SelectProps {
   /**
@@ -57,6 +58,19 @@ export const Select = ({
 
   const [open, setOpen] = useState<boolean>(false);
 
+  const componentRef = useRef<HTMLDivElement>(null);
+
+  const [listening, setListening] = useState(false);
+
+  const toggle = () => setOpen(!open);
+
+  useEffect(listenForOutsideClicks(
+    listening,
+    setListening,
+    componentRef,
+    setOpen
+  ), []);
+
   function handleInputChange(selectedValue: string) {
     let result = [...values];
     const index = result.indexOf(selectedValue);
@@ -86,76 +100,80 @@ export const Select = ({
     <Section
       label={label}
     >
-      <HoverPad
-        elementType='label'
-        className={styles.wrapper}
-        onClick={() => setOpen(!open)}
+      <div
+        ref={componentRef}
       >
-        <div
-          className={styles.content}
-        >
-          {multi &&
-            <>
-              {values.map((value) => (
-                <Tag
-                  key={value}
-                  removable
-                  onRemove={() => handleInputChange(value)}
-                >
-                  {readOption(value, options)}
-                </Tag>
-              ))}
-              <input
-                className={styles.input}
-                type='text'
-                value={input}
-                onChange={event => setInput(event.target.value)}
-              />
-            </>
-          }
-          {!multi &&
-            <div
-              className={styles.singleValue}
-            >
-              {readOption(value, options)}
-            </div>
-          }
-        </div>
-        {clearable &&
-          <span
-            className={styles.removeIcon}
-            onClick={handleClear}
-          >
-            <RiCloseCircleFill
-              size={16}
-            />
-          </span>
-        }
-      </HoverPad>
-      {open &&
-        <div
-          className={styles.dropdownWrapper}
+        <HoverPad
+          elementType='label'
+          className={styles.wrapper}
+          onClick={toggle}
         >
           <div
-            className={classnames(commonStyles.squircle, styles.dropdown)}
+            className={styles.content}
           >
             {multi &&
-              <CheckboxGroup
-                options={filteredOptions}
-                values={values}
-                onChange={onChange}
-              />
+              <>
+                {values.map((value) => (
+                  <Tag
+                    key={value}
+                    removable
+                    onRemove={() => handleInputChange(value)}
+                  >
+                    {readOption(value, options)}
+                  </Tag>
+                ))}
+                <input
+                  className={styles.input}
+                  type='text'
+                  value={input}
+                  onChange={event => setInput(event.target.value)}
+                />
+              </>
             }
             {!multi &&
-              <RadioGroup
-                options={filteredOptions}
-                value={value}
-                onChange={onChange}
-              />
+              <div
+                className={styles.singleValue}
+              >
+                {readOption(value, options)}
+              </div>
             }
           </div>
-        </div>
-      }
+          {clearable &&
+            <span
+              className={styles.removeIcon}
+              onClick={handleClear}
+            >
+              <RiCloseCircleFill
+                size={16}
+              />
+            </span>
+          }
+        </HoverPad>
+        {open &&
+          <div
+            className={styles.dropdownWrapper}
+          >
+            <div
+              className={classnames(commonStyles.squircle, styles.dropdown)}
+            >
+              {multi &&
+                <CheckboxGroup
+                  options={filteredOptions}
+                  values={values}
+                  onChange={onChange}
+                />
+              }
+              {!multi &&
+                <RadioGroup
+                  options={filteredOptions}
+                  value={value}
+                  onChange={onChange}
+                />
+              }
+            </div>
+          </div>
+        }
+      </div>
     </Section>
   );
 };

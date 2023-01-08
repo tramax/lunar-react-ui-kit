@@ -9,7 +9,19 @@ import { Button } from 'components/button/button';
 import { Section } from 'components/section/section';
 import { Link } from 'components/link/link';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { OPTIONS } from 'components/select/select.stories';
+
+export const OPTIONS = [
+  { label: 'Jupiter planet', value: 'jupiter' },
+  { label: 'Mars planet', value: 'mars' },
+  { label: 'Venus planet', value: 'venus' },
+  { label: 'Earth planet', value: 'earth' },
+  { label: 'Black hole', value: 'black_hole' },
+  { label: 'Sun A1', value: 'a1' },
+  { label: 'Sun NST', value: 'nst' },
+  { label: 'Galaxy Gemini 2', value: 'ge2' },
+  { label: 'Galaxy Leo SK', value: 'leo' },
+  { label: 'Galaxy Automata-III', value: 'aut3' }
+];
 
 const GENDER = [
   { label: 'Male', value: 'male' },
@@ -110,6 +122,9 @@ export  const Introduction = () => {
           <Card
             label='Can you spot the difference?'
           >
+            <Text>
+              The Select component reinforces the mental model of single vs. multiple choice inputs.
+            </Text>
             <Select
               label='Home Location'
               options={OPTIONS}

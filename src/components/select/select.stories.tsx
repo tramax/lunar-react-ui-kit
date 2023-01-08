@@ -1,18 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Select } from './select';
-
-export const OPTIONS = [
-  { label: 'Jupiter planet', value: 'jupiter' },
-  { label: 'Mars planet', value: 'mars' },
-  { label: 'Venus planet', value: 'venus' },
-  { label: 'Earth planet', value: 'earth' },
-  { label: 'Black hole', value: 'black_hole' },
-  { label: 'Sun A1', value: 'a1' },
-  { label: 'Sun NST', value: 'nst' },
-  { label: 'Galaxy Gemini 2', value: 'ge2' },
-  { label: 'Galaxy Leo SK', value: 'leo' },
-  { label: 'Galaxy Automata-III', value: 'aut3' }
-];
+import { OPTIONS } from 'stories/introduction';
 
 const LABEL = 'Select Dropdown';
 
