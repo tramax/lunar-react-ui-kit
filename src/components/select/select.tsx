@@ -85,6 +85,7 @@ export const Select = ({
   }
 
   function handleClear(event: React.SyntheticEvent) {
+    event.preventDefault();
     event.stopPropagation();
 
     if (multi) {
