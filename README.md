@@ -5,6 +5,8 @@ Your can visit the [demo website](https://63bafed4b98099ff5c87a486-hkvmcvwhzr.ch
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm run storybook`
+Start Storybook development server. This app has been mainly developed in this mode.
 
 ### `npm start`
 
