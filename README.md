@@ -1,6 +1,6 @@
 # LUNAR - A Superellipse React UI Kit
 ## Demo
-
+Your can visit the [demo website](https://63bafed4b98099ff5c87a486-hkvmcvwhzr.chromatic.com/) to see LUNAR's components laid out in Storybook.
 
 ## Available Scripts
 
