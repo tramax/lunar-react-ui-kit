@@ -156,6 +156,9 @@ export const Select = ({
             <div
               className={classnames(commonStyles.squircle, styles.dropdown)}
             >
+              {!filteredOptions.length &&
+                <span>(No matched options)</span>
+              }
               {multi &&
                 <CheckboxGroup
                   options={filteredOptions}
