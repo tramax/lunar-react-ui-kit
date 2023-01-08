@@ -138,7 +138,7 @@ export const Select = ({
               </div>
             }
           </div>
-          {clearable &&
+          {clearable && (value || values.length > 0) &&
             <span
               className={styles.removeIcon}
               onClick={handleClear}
