@@ -9,6 +9,7 @@ import { Button } from 'components/button/button';
 import { Section } from 'components/section/section';
 import { Link } from 'components/link/link';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { OPTIONS } from 'components/select/select.stories';
 
 const GENDER = [
   { label: 'Male', value: 'male' },
@@ -89,11 +90,37 @@ export  const Introduction = () => {
                   label='Submit'
                 />
               </Col>
-
             </Row>
           </Card>
         </Col>
         <Col xs>
+          <Card
+            label='Non-intrusive Label That Allows The Main Content To Shine'
+          >
+            <Title>
+              Clean typography
+            </Title>
+            <Text>
+              Less is more. LUNAR recommends using two main font types, title and body, though it allows size, weight and case transformation customizations.
+            </Text>
+            <Text>
+              Here is <Link>a hyperlink</Link>. Try hovering it!
+            </Text>
+          </Card>
+          <Card
+            label='Can you spot the difference?'
+          >
+            <Select
+              label='Home Location'
+              options={OPTIONS}
+            />
+            <Select
+              label='Visitted Location'
+              options={OPTIONS}
+              multi
+              clearable
+            />
+          </Card>
         </Col>
       </Row>
     </>

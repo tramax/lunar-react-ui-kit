@@ -36,14 +36,16 @@ export const Card = ({
     >
       {label &&
         <div
-          className={styles.label}
+          className={styles.labelWrapper}
         >
-          {label}
+          <div
+            className={styles.label}
+          >
+            {label}
+          </div>
         </div>
       }
-      <div>
-        {children}
-      </div>
+      {children}
     </div>
   );
 };

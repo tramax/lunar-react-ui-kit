@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Select } from './select';
 
-const OPTIONS = [
+export const OPTIONS = [
   { label: 'Jupiter planet', value: 'jupiter' },
   { label: 'Mars planet', value: 'mars' },
   { label: 'Venus planet', value: 'venus' },

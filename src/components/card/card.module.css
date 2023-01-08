@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  margin-bottom: var(--spacing-large);
   padding: 20px;
   background-color: white;
   box-shadow:
@@ -19,7 +20,6 @@
   font-weight: bold;
   font-size: var(--font-size-small);
   color: var(--color-secondary);
-  margin-bottom: var(--spacing-large);
   position: relative;
   display: inline-block;
 }
@@ -32,4 +32,8 @@
   height: 2px;
   width: 75%;
   background-color: var(--color-primary-bg);
+}
+
+.labelWrapper {
+  margin-bottom: var(--spacing-large);
 }
