@@ -41,6 +41,9 @@ interface SelectProps {
   onChange: (value: string[] | string) => void;
 }
 
+/**
+ * Allows users to select either single or multiple options. It is suitable to host a long list of options. For shorter lists, consider Checkbox Group or Radio Group.
+ */
 export const Select = ({
   label,
   values = [],

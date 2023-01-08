@@ -24,6 +24,9 @@ const LEVEL_MAP = {
   large: 'h1'
 } as const;
 
+/**
+ * Renders a title in HTML heading element (h1, h2 or h3 according to the size)
+ */
 export const Title = ({
   children,
   size = 'medium',

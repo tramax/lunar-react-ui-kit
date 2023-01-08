@@ -25,6 +25,9 @@ interface CheckboxGroupProps {
   onChange: (value: string[]) => void;
 }
 
+/**
+ * Allow users to select multiple options
+ */
 export const CheckboxGroup = ({
   label,
   values = [],

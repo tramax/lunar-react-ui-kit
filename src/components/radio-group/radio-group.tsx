@@ -25,6 +25,9 @@ interface RadioGroupProps {
   onChange: (value: string) => void;
 }
 
+/**
+ * Allows users to select one options among a list of multiple options
+ */
 export const RadioGroup = ({
   label,
   value,

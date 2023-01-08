@@ -19,7 +19,7 @@ interface CardProps {
 }
 
 /**
- * Allows users to perform some action
+ * Displays a group of related information
  */
 export const Card = ({
   children,

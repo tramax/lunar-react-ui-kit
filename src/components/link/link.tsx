@@ -25,7 +25,9 @@ interface LinkProps {
   href?: string;
 }
 
-
+/**
+ * Renders a hyperlink with hover effect
+ */
 export const Link = ({
   children,
   size,

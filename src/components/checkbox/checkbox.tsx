@@ -18,6 +18,9 @@ interface CheckboxProps {
   onChange?: () => void;
 }
 
+/**
+ * Render a single checkbox (not useful on its own)
+ */
 export const Checkbox = ({
   children,
   checked,

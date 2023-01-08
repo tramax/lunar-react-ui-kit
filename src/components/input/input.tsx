@@ -22,6 +22,9 @@ interface InputProps {
   onChange?: () => void;
 }
 
+/**
+ * Collects simple input from users such as text and number
+ */
 export const Input = ({
   label,
   value,

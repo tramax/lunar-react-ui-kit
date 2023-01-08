@@ -16,7 +16,9 @@ interface TextProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-
+/**
+ * Renders body text using the <p> element
+ */
 export const Text = ({
   children,
   size,

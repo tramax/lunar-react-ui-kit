@@ -29,7 +29,7 @@ const componentMap = {
 };
 
 /**
- * Allows users to perform some action
+ * Renders a round box that changes its background color when users hover it
  */
 export const HoverPad = ({
   className,

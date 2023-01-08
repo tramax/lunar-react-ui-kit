@@ -18,6 +18,9 @@ interface RadioProps {
   onChange?: () => void;
 }
 
+/**
+ * Displays a single radio button (not useful on its own)
+ */
 export const Radio = ({
   children,
   checked,

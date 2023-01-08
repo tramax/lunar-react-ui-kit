@@ -11,6 +11,9 @@ interface SectionProps {
   label?: string;
 }
 
+/**
+ * Renders a section that optionally includes a label
+ */
 export const Section = ({
   label,
   children

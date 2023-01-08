@@ -18,7 +18,7 @@ interface TagProps {
 }
 
 /**
- * Allows users to perform some action
+ * Displays a tag suitable for predefined information (enum)
  */
 export const Tag = ({
   children,
