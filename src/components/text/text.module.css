@@ -2,6 +2,7 @@
   margin: 0;
   margin-block-end: var(--spacing);
   font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .small {

@@ -1,6 +1,7 @@
 .title {
   margin: 0;
   margin-block-end: var(--spacing);
+  margin-block-start: var(--spacing-large);
   font-size: var(--font-title-size);
   font-weight: bold;
 }
@@ -11,6 +12,7 @@
 
 .large {
   font-size: var(--font-title-size-large);
+  margin-block-start: var(--spacing);
 }
 
 .bold {

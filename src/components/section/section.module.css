@@ -1,5 +1,5 @@
 .section {
-  margin-bottom: var(--spacing);
+  margin-bottom: var(--spacing-large);
 }
 
 .label {
